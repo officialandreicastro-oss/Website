@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriTech | The Future of Food Technology</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- CSS STYLES --- */
+        :root {
+            --primary-color: #10b981; /* Tech Green */
+            --secondary-color: #1f2937; /* Dark Grey */
+            --accent-color: #f59e0b; /* Orange for CTA */
+            --light-bg: #f3f4f6;
+            --white: #ffffff;
+            --text-color: #4b5563;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-nav {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+        }
+
+        .btn-nav:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(31, 41, 55, 0.8), rgba(31, 41, 55, 0.8)), url('https://images.unsplash.com/photo-1550989460-0adf9ea622e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-hero {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+
+        .btn-hero:hover {
+            transform: translateY(-3px);
+            background-color: #059669;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 10%;
+            background-color: var(--light-bg);
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            margin-bottom: 3rem;
+            display: block;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Course Syllabus */
+        .syllabus {
+            padding: 5rem 10%;
+        }
+
+        .syllabus-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .module {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 20px;
+            margin-bottom: 2rem;
+        }
+
+        .module h3 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Enrollment Section */
+        .enroll {
+            padding: 5rem 10%;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .enroll h2 {
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            max-width: 500px;
+            margin: 0 auto 1rem;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 5px;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        button[type="submit"] {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #059669;
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem;
+            text-align: center;
+            background-color: #111827;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Hide nav links on small screens for simplicity */
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Nutri<span>Tech</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Innovations</a></li>
+            <li><a href="#syllabus">Curriculum</a></li>
+            <li><a href="#enroll" class="btn-nav">Join Now</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Master the Future of Food</h1>
+            <p>The world's first fully integrated Food Technology & AI course. Learn to code, grow food, and revolutionize the culinary industry.</p>
+            <a href="#enroll" class="btn-hero">Start Learning Today</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2 class="section-title">Why Choose NutriTech?</h2>
+        <span class="section-subtitle">We blend culinary arts with high-level engineering.</span>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3>AI in Agriculture</h3>
+                <p>Learn how to use Artificial Intelligence to optimize crop yields and manage smart farms.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🧪</div>
+                <h3>Molecular Gastronomy</h3>
+                <p>Use science to create innovative textures and flavors using molecular chemistry techniques.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌱</div>
+                <h3>Sustainable Tech</h3>
+                <p>Master lab-grown meat technologies and zero-waste supply chain logistics.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Syllabus Section -->
+    <section id="syllabus" class="syllabus">
+        <div class="syllabus-container">
+            <h2 class="section-title" style="text-align: center;">Course Curriculum</h2>
+            <br>
+            <div class="module">
+                <h3>Module 1: The Robotics Kitchen</h3>
+                <p>Understanding automated cooking bots, IoT connectivity, and kitchen safety protocols.</p>
+            </div>
+            <div class="module">
+                <h3>Module 2: Bio-Engineering</h3>
+                <p>Deep dive into vertical farming, hydroponics, and CRISPR for crop enhancement.</p>
+            </div>
+            <div class="module">
+                <h3>Module 3: Data Driven Diets</h3>
+                <p>Building Apps that analyze microbiome data to generate personalized meal plans.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enrollment Section -->
+    <section id="enroll" class="enroll">
+        <h2>Enroll in the Next Cohort</h2>
+        <p>Classes start on the 1st of next month. Limited seats available.</p>
+        <br>
+        <form id="enrollForm" onsubmit="handleEnroll(event)">
+            <div class="form-group">
+                <input type="text" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Email Address" required>
+            </div>
+            <div class="form-group">
+                <select>
+                    <option>Select Experience Level</option>
+                    <option>Beginner</option>
+                    <option>Intermediate</option>
+                    <option>Expert</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit">Secure My Spot</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 NutriTech Academy. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript Functionality -->
+    <script>
+        // Handle Form Submission
+        function handleEnroll(event) {
+            event.preventDefault(); // Prevents the page from reloading
+            const name = event.target[0].value;
+            alert(`Welcome to NutriTech, ${name}! \n\nYour enrollment request has been received. We will contact you shortly.`);
+            event.target.reset();
+        }
+
+        // Smooth Scroll for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
